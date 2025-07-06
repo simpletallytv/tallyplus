@@ -1,0 +1,148 @@
+\documentclass{article}
+%\title{LTC Reader Owner's Manual}\label{ltc-reader-owners-manual}
+\title{\textbf{TallyPlus руководство пользователя}}
+\date{} % Устанавливаем пустую дату
+\author{}
+
+
+\usepackage[a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+%\usepackage{hyperref} % Загружаем пакет для гиперссылок
+\usepackage{graphicx}
+\usepackage{enumitem} % Подключаем пакет для работы со списками
+\usepackage{longtable} % Подключаем пакет для длинных таблиц
+\usepackage{booktabs}  % Подключаем пакет для красивых таблиц
+\usepackage{tabularx}  % Для управления шириной столбцов
+\usepackage{fancyhdr} % Для пользовательских колонтитулов
+\usepackage{float}
+\usepackage{tcolorbox} % для callout
+\usepackage{mdframed} % для callout
+\usepackage{fontspec}
+\usepackage{colortbl}
+
+\usepackage[hidelinks]{hyperref} % Убрать цветные рамки вокруг ссылок
+
+% Устанавливаем шрифт Open Sans
+\setmainfont{Open Sans}
+
+
+% Переопределяем команды для заголовка
+%\renewcommand{\title}[1]{\begin{center}\textbf{\huge #1}\end{center}}
+%\renewcommand{\author}[1]{\begin{center}\textbf{#1}\end{center}}
+%\renewcommand{\date}[1]{\begin{center}\textbf{#1}\end{center}}
+
+\begin{document}
+	
+	\begin{titlepage} % Титульный лист
+		\centering
+		\maketitle
+		\thispagestyle{empty} % Убирает номер страницы на первой странице
+		\vspace{1cm} % Отступ перед изображением
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=\textwidth, keepaspectratio]{imgs/title.png}
+		\end{figure}
+		\vfill % Отодвигает текст вниз страницы
+		% Текст внизу страницы
+		\Large
+		Июль 2025 \\
+		SimpleTally \\
+		\href{http://www.simpletally.tv}{www.simpletally.tv}
+	\end{titlepage}
+	\pagenumbering{arabic} % Устанавливает арабскую нумерацию
+	\setcounter{page}{2}   % Устанавливает номер страницы на 1 для следующей страницы	
+	\tableofcontents % Вставка оглавления
+	\newpage % Переход на новую страницу после оглавления
+	
+	\section{Введение}\label{about}
+	Устройство предназначено для работы совместно с системными и портативными камерами в аппаратно-студийных комплексах.
+	\noindent Назначение: 
+	\begin{itemize}
+		\item Идентификация номера камеры
+		\item On-Air сигнализация
+	\end{itemize}
+	\noindent Управление On-Air сигнализацией осуществляется одим из способов:
+	\begin{itemize}
+		\item LDR сенсор (датчиком освещенности)
+		\item сигнал GPI (General Purpose Interface)	
+	\end{itemize}
+	
+	\section{Дизайн}\label{design}
+	Лампа имеет:
+	\begin{itemize}
+		\item микропроцессорное управление
+		\item настройка номера индикации
+		\item настройка яркости индикации
+		\item настройка чувствительности датчика освещенности
+		\item энергонезависимая память для хранения настроек
+	\end{itemize}
+
+	\section{Комплектация}
+	\begin{itemize}
+		\item Индикатор Tally Plus — 1шт
+		\item Блок питания с разъемом GX12 — 1шт
+		\item LDR сенсор с разъемом mini-XRL — 1шт
+		\item Кабель питания и управления — опция
+		\item Адаптер крепления — опция
+	\end{itemize}
+	
+	\section{Спецификация}
+	\begin{center}
+		\begin{tabular}{|p{0.1\textwidth}|p{0.4\textwidth}|p{0.5\textwidth}|} \hline
+			№ & Наименование & Значение \\ \hline
+			1 & Количество семисегментных индикаторов, шт & 1 (TallyPlus), 2 (TallyPlus Dual Digit) \\ \hline
+			2 & Диапазон индикации номера камеры & 0-9 (TallyPlus), 00-99 (TallyPlus Dual Digit) \\ \hline
+			3 & Цвет свечения & зеленый (обычное состояние), красный (активировано сигналом управления) \\ \hline
+			4 & Количество уровней яркости, шт & 6 \\ \hline
+			5 & Сигнал управления & GPI или LDR (фоторезистор) \\ \hline
+			6 & Крепление & сверху и снизу резъба 1/4″-20 UNC (подходят стандартные аксессуары для фототехники) \\ \hline
+			7 & Электропитание, В & 9 – 18V \\ \hline
+			8 & Потребляемая мощность, Вт & 0.5 \\ \hline
+			9 & Способ подачи питания & от камеры или от внешнего блока питания \\ \hline
+			10 & Размер (ШхВхГ), мм & 69x92x44 (TallyPlus), 130x92x44 (TallyPlus Dual Digit) \\ \hline
+			11 & Вес, гр & 100 (TallyPlus), 150 (TallyPlus Dual Digit) \\ \hline
+		\end{tabular}
+	\end{center}	
+	
+	\section{Варианты подключения}
+	\begin{center}
+		\begin{tabular}{|p{0.1\textwidth}|p{0.4\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|} \hline
+			№ & Варианты подключения & Разъем GX12 & Разъем miniXLR \\ \hline
+			1 & Питание и управление от камеры & Питание и GPI & не используется \\ \hline 
+			2 & Питание от камеры, управление от датчика LDR (фото резистор) & Питание & LDR \\ \hline
+			3 & Питание от внешнего блока питания, управление от камеры или внешнего & Питание & GPI \\ \hline
+		\end{tabular}
+	\end{center}
+		
+	\section{Порядок работы}
+		\begin{enumerate}
+			\item Установить и зафиксировать индикатор на камере или телесуфлере. Для крепления использовать фото аксессуары с резьбовым креплением 1/4” дюйма.
+			\item Произвести подключение кабелей в зависимости от выбранного варианта подключения
+			\item С помощью манипуляторов размещенные на правой боковой стороне индикатора настроить номер и яркость свечения индикатора. Манипуляторы - 3-x позиционные с фиксацией в среднем положении.
+			\item Проверить корректность работы индикатора переключая камеру в режимы On-Air / Off-Air.
+		\end{enumerate}
+	\section{Подключение кабелей}
+		\subsection{GX12}
+			\begin{center}
+				\begin{tabular}{|c|c|} \hline
+					Контакт & Сигнал \\ \hline
+					1 & GND \\ \hline
+					2 & GPI \\ \hline
+					3 & GND \\ \hline
+					4 & POW  \\ \hline
+				\end{tabular}		
+			\end{center}
+		\subsection{miniXLR}
+			\begin{center}
+				\begin{tabular}{|c|c|} \hline
+					Контакт & Сигнал \\ \hline
+					1 & LDR  \\ \hline
+					2 & GND \\ \hline
+					3 & GPI \\ \hline
+					4 & не используется  \\ \hline
+				\end{tabular}		
+			\end{center}
+	
+	\section{Контакты}\label{how-to-contact-us}
+	Сайт \textbf{\href{http://www.simpletally.tv}{www.simpletally.tv}}
+	
+\end{document}
