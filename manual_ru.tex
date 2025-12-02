@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 %\title{LTC Reader Owner's Manual}\label{ltc-reader-owners-manual}
 \title{\textbf{TallyPlus руководство пользователя}}
 \date{} % Устанавливаем пустую дату
@@ -18,6 +18,7 @@
 \usepackage{mdframed} % для callout
 \usepackage{fontspec}
 \usepackage{colortbl}
+\usepackage{array} % выравнивание в таблице по вертикали
 
 \usepackage[hidelinks]{hyperref} % Убрать цветные рамки вокруг ссылок
 
@@ -39,19 +40,19 @@
 		\vspace{1cm} % Отступ перед изображением
 		\begin{figure}[h]
 			\centering
-			\includegraphics[width=8cm, keepaspectratio]{imgs/title.png}
+			\includegraphics[width=18cm, keepaspectratio]{imgs/title.png}
 		\end{figure}
 		\vfill % Отодвигает текст вниз страницы
 		% Текст внизу страницы
 		\Large
-		Июль 2025 \\
+		Декабрь 2025 \\
 		SimpleTally \\
 		\href{http://www.simpletally.tv}{www.simpletally.tv}
 	\end{titlepage}
 	\pagenumbering{arabic} % Устанавливает арабскую нумерацию
 	\setcounter{page}{2}   % Устанавливает номер страницы на 1 для следующей страницы	
 	\tableofcontents % Вставка оглавления
-	%\newpage % Переход на новую страницу после оглавления
+	\newpage % Переход на новую страницу после оглавления
 	
 	\section{Введение}\label{about}
 	Устройство предназначено для работы совместно с системными и портативными камерами в аппаратно-студийных комплексах.
@@ -84,7 +85,7 @@
 
 	\section{Комплектация}
 	\begin{itemize}
-		\item Индикатор Tally Plus — 1шт
+		\item Индикатор TallyPlus / TallyPlus Twin— 1шт
 		\item Блок питания с разъемом GX12 — 1шт
 		\item LDR сенсор с разъемом mini-XRL — 1шт
 		\item Кабель питания и управления — опция
@@ -93,40 +94,42 @@
 	
 	\section{Спецификация}
 	\begin{center}
-		\begin{tabular}{|p{0.02\textwidth}|p{0.3\textwidth}|p{0.65\textwidth}|} \hline
+		\begin{tabular}{|m{0.02\textwidth}|m{0.3\textwidth}|m{0.65\textwidth}|} \hline
 			\bfseries № & \bfseries Наименование & \bfseries Значение \\ \hline
 			1 & Количество семисегментных индикаторов, шт & 1 (TallyPlus),
-													      \newline 2 (TallyPlus Dual Digit) \\ \hline
+													      \newline 2 (TallyPlus Twin) \\ \hline
 			2 & Диапазон индикации & 0-9 (TallyPlus),
-			                                       \newline 00-99 (TallyPlus Dual Digit) \\ \hline
+			                                       \newline 00-99 (TallyPlus Twin) \\ \hline
 			3 & Цвет свечения & зеленый (обычное состояние),
 							    \newline красный (активировано сигналом управления) \\ \hline
 			4 & Количество уровней яркости, шт & 6 \\ \hline
 			5 & Сигнал управления & LDR (фоторезистор) или GPI (+3 - +6 В, потенциометр должен быть в крайнем левом положении) \\ \hline
 			6 & Крепление & сверху и снизу резъба 1/4″-20 UNC (подходят стандартные аксессуары для фототехники) \\ \hline
-			7 & Электропитание, В & 9 – 18V \\ \hline
+			7 & Электропитание, В & 9 – 18 \\ \hline
 			8 & Потребляемая мощность, Вт & 0.5 \\ \hline
 			9 & Способ подачи питания & от камеры или от внешнего блока питания \\ \hline
-			10 & Размер (ШхВхГ), мм & 69x92x45 (TallyPlus),
-			                          \newline 120x92x45 (TallyPlus Dual Digit) \\ \hline
-			11 & Размер упаковки (ШхВхГ), мм & 116x103x102 \\ \hline
-			12 & Вес, гр & 170 (TallyPlus),
-			               \newline 250 (TallyPlus Dual Digit) \\ \hline
-			13 & Вес с упаковкой, гр & 500 (TallyPlus),
-			                           \newline 580 (TallyPlus Dual Digit) \\ \hline
+			10 & Размер без разъемов и органов управления (ШхВхГ), мм & 70x93x45 (TallyPlus),
+			                          \newline 118x93x45 (TallyPlus Twin) \\ \hline
+			11 & Размер упаковки (ШхВхГ), мм & 118x103x102 (TallyPlus),
+										\newline 168x103x102 (TallyPlus Twin) \\ \hline
+			12 & Вес, гр & 254 (TallyPlus),
+			               \newline 354 (TallyPlus Twin) \\ \hline
+			13 & Вес с упаковкой, гр & 600 (TallyPlus),
+			                           \newline 750 (TallyPlus Twin) \\ \hline
 			
 		\end{tabular}
 	\end{center}	
 	
 	\section{Варианты подключения}
 	\begin{center}
-		\begin{tabular}{|p{0.02\textwidth}|p{0.4\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|} \hline
+		\begin{tabular}{|m{0.02\textwidth}|m{0.4\textwidth}|m{0.25\textwidth}|m{0.25\textwidth}|} \hline
 			\bfseries № & \bfseries Варианты подключения & \bfseries Разъем GX12 & \bfseries Разъем miniXLR \\ \hline
 			1 & Питание и управление от камеры & Питание и GPI & не используется \\ \hline 
 			2 & Питание от камеры, управление от датчика LDR (фото резистор) & Питание & LDR \\ \hline
 			3 & Питание от внешнего блока питания, управление от камеры или внешнего & Питание & GPI \\ \hline
 		\end{tabular}
 	\end{center}
+	% \newpage % Переход на новую страницу
 		
 	\section{Порядок работы}
 		\begin{enumerate}
@@ -158,7 +161,21 @@
 				\end{tabular}		
 			\end{center}
 	
+	\section{Информация для заказа}
+		\begin{center}
+			\begin{tabular}{|m{0.05\textwidth}|m{0.25\textwidth}|m{0.65\textwidth}|} 
+				\hline
+				\bfseries № & \bfseries Артикул & \bfseries Описание \\ \hline
+				1 & TallyPlus & Индикатор односегментный \\ \hline
+				2 & TallyPlus Twin & Индикатор двухсегментный \\ \hline
+				3 & TallyPlus H4p100 & Кабель питания и управления GX12 — Hirose 4-pin male для подключения к разъему Script light на Grass Valley LDX 98, длина 1 метр \\ \hline
+				4 & TallyPlus H20p100 & Кабель питания и управления GX12 — Hirose 20-pin male для подключения к разъему Auxiliary на Grass Valley LDX 98, длина 1 метр \\ \hline
+				5 & TallyPlus F1 & Адаптер крепления для телесуфлера Fortinge ERA IP \\ \hline
+				6 & TallyPlus F2 & Адаптер крепления универсальный \\ \hline
+			\end{tabular}
+		\end{center}
+	
 	\section{Контакты}\label{how-to-contact-us}
-	Сайт \textbf{\href{http://www.simpletally.tv}{www.simpletally.tv}}
+		Сайт \textbf{\href{http://www.simpletally.tv}{www.simpletally.tv}}
 	
 \end{document}

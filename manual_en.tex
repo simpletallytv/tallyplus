@@ -1,0 +1,171 @@
+\documentclass[12pt]{article}
+\title{\textbf{TallyPlus User Manual}}
+\date{} % Set empty date
+\author{}
+
+\usepackage[a4paper, left=1.5cm, right=1.5cm, top=1cm, bottom=1.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{enumitem} % Package for list management
+\usepackage{longtable} % Package for long tables
+\usepackage{booktabs}  % Package for beautiful tables
+\usepackage{tabularx}  % For controlling column widths
+\usepackage{fancyhdr} % For custom headers
+\usepackage{float}
+\usepackage{tcolorbox} % For callouts
+\usepackage{mdframed} % For callouts
+\usepackage{fontspec}
+\usepackage{colortbl}
+\usepackage{array} % Vertical alignment in tables
+
+\usepackage[hidelinks]{hyperref} % Remove colored borders around links
+
+% Set font to Open Sans
+\setmainfont{Open Sans}
+
+\begin{document}
+	
+	\begin{titlepage} % Title page
+		\centering
+		\maketitle
+		\thispagestyle{empty} % Remove page number on the first page
+		\vspace{1cm} % Space before image
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=18cm, keepaspectratio]{imgs/title.png}
+		\end{figure}
+		\vfill % Pushes text down the page
+		% Text at the bottom of the page
+		\Large
+		December 2025 \\
+		SimpleTally \\
+		\href{http://www.simpletally.tv}{www.simpletally.tv}
+	\end{titlepage}
+	\pagenumbering{arabic} % Set Arabic numbering
+	\setcounter{page}{2}   % Set page number to 1 for the next page	
+	\tableofcontents % Insert table of contents
+	\newpage % Move to a new page after the table of contents
+	
+	\section{Introduction}\label{about}
+	The device is designed to work with system and portable cameras in television studios.
+	\noindent Purpose: 
+	\begin{itemize}
+		\item Camera number identification
+		\item On-Air tally
+	\end{itemize}
+	\noindent The On-Air tally is controlled by one of the following methods:
+	\begin{itemize}
+		\item LDR sensor (light-dependent resistor)
+		\item GPI signal (General Purpose Interface)	
+	\end{itemize}
+	
+	\section{Design}\label{design}
+	The device features:
+	\begin{itemize}
+		\item Microprocessor control
+		\item Indicator number configuration
+		\item Brightness configuration
+		\item Light sensor sensitivity configuration
+		\item Non-volatile memory for storing settings
+	\end{itemize}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[height=4cm]{imgs/iso_left_1.png}
+		\includegraphics[height=4cm]{imgs/iso_right_1.png}
+	\end{figure}
+	
+	\section{Package Contents}
+	\begin{itemize}
+		\item TallyPlus / TallyPlus Twin Indicator— 1 piece
+		\item Power supply with GX12 connector — 1 piece
+		\item LDR sensor with mini-XLR connector — 1 piece
+		\item Power and control cable — optional
+		\item Mounting adapter — optional
+	\end{itemize}
+	
+	\section{Specifications}
+	\begin{center}
+		\begin{tabular}{|m{0.02\textwidth}|m{0.3\textwidth}|m{0.65\textwidth}|} \hline
+			\bfseries No & \bfseries Item Name & \bfseries Value \\ \hline
+			1 & Number of seven-segment indicators, pcs & 1 (TallyPlus),
+			\newline 2 (TallyPlus Twin) \\ \hline
+			2 & Indication range & 0-9 (TallyPlus),
+			\newline 00-99 (TallyPlus Twin) \\ \hline
+			3 & Light color & green (normal state),
+			\newline red (activated by control signal) \\ \hline
+			4 & Number of brightness levels, pcs & 6 \\ \hline
+			5 & Control signal & from LDR (photoresistor) or GPI (+3 - +6 V, potentiometer should be in the extreme left position) \\ \hline
+			6 & Mounting & top and bottom 1/4″-20 UNC thread (standard photo accessory compatible) \\ \hline
+			7 & Power supply, V & 9 – 18 \\ \hline
+			8 & Power consumption, W & 0.5 \\ \hline
+			9 & Power supply method & from the camera or external power supply \\ \hline
+			10 & Size without connectors and controls (WxHxD), mm & 70x93x45 (TallyPlus),
+			\newline 118x93x45 (TallyPlus Twin) \\ \hline
+			11 & Package size (WxHxD), mm & 118x103x102 (TallyPlus),
+			\newline 168x103x102 (TallyPlus Twin) \\ \hline
+			12 & Weight, g & 254 (TallyPlus),
+			\newline 354 (TallyPlus Twin) \\ \hline
+			13 & Weight with packaging, g & 600 (TallyPlus),
+			\newline 750 (TallyPlus Twin) \\ \hline
+			
+		\end{tabular}
+	\end{center}	
+	
+	\section{Connection Options}
+	\begin{center}
+		\begin{tabular}{|m{0.02\textwidth}|m{0.4\textwidth}|m{0.25\textwidth}|m{0.25\textwidth}|} \hline
+			\bfseries No & \bfseries Connection Options & \bfseries GX12 Connector & \bfseries miniXLR Connector \\ \hline
+			1 & Power and control from the camera & Power and GPI & not used \\ \hline 
+			2 & Power from the camera, control from LDR sensor (photoresistor) & Power & LDR \\ \hline
+			3 & Power from external power supply, control from camera or external source & Power & GPI \\ \hline
+		\end{tabular}
+	\end{center}
+	
+	\section{Operating Procedure}
+	\begin{enumerate}
+		\item Install and secure the indicator on the camera or teleprompter. Use photo accessories with 1/4” threaded mounting for installation.
+		\item Connect the cables according to the chosen connection option.
+		\item Use the toggles located on the right side of the indicator to set the number and brightness of the indicators. The manipulators are 3-position with a lock in the middle position .
+		\item In the mode of operation with the LDR sensor (photoresistor), use the sensitivity regulator located on the side to set the threshold for switching the indicator color. When operating from the GPI signal, set the sensitivity regulator to the minimum position (turn counterclockwise until it clicks).
+		\item Check the correct operation of the indicator by switching the camera to On-Air / Off-Air modes.
+	\end{enumerate}
+	
+	\section{Cable Connections}
+	\subsection{GX12}
+	\begin{center}
+		\begin{tabular}{|c|c|} \hline
+			\bfseries Contact & \bfseries Signal \\ \hline
+			1 & GND \\ \hline
+			2 & GPI \\ \hline
+			3 & GND \\ \hline
+			4 & POW  \\ \hline
+		\end{tabular}		
+	\end{center}
+	\subsection{miniXLR}
+	\begin{center}
+		\begin{tabular}{|c|c|} \hline
+			\bfseries Contact & \bfseries Signal \\ \hline
+			1 & LDR  \\ \hline
+			2 & not used \\ \hline
+			3 & GPI \\ \hline
+			4 & GND  \\ \hline
+		\end{tabular}		
+	\end{center}
+	
+	\section{Ordering Information}
+	\begin{center}
+		\begin{tabular}{|m{0.05\textwidth}|m{0.25\textwidth}|m{0.65\textwidth}|} 
+			\hline
+			\bfseries No & \bfseries Article & \bfseries Description \\ \hline
+			1 & TallyPlus & Single-segment indicator \\ \hline
+			2 & TallyPlus Twin & Dual-segment indicator \\ \hline
+			3 & TallyPlus H4p100 & Power and control cable GX12 — Hirose 4-pin male for connection to the Script light connector on Grass Valley LDX 98, length 1 meter \\ \hline
+			4 & TallyPlus H20p100 & Power and control cable GX12 — Hirose 20-pin male for connection to the Auxiliary connector on Grass Valley LDX 98, length 1 meter \\ \hline
+			5 & TallyPlus F1 & Mounting adapter for Fortinge ERA IP teleprompter \\ \hline
+			6 & TallyPlus F2 & Universal mounting adapter \\ \hline
+		\end{tabular}
+	\end{center}
+	
+	\section{Contact Information}\label{how-to-contact-us}
+	Website \textbf{\href{http://www.simpletally.tv}{www.simpletally.tv}}
+	
+\end{document}
