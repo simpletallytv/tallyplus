@@ -5,7 +5,7 @@
 \author{}
 
 
-\usepackage[a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+\usepackage[a4paper, left=1.5cm, right=1.5cm, top=1cm, bottom=1.5cm]{geometry}
 %\usepackage{hyperref} % Загружаем пакет для гиперссылок
 \usepackage{graphicx}
 \usepackage{enumitem} % Подключаем пакет для работы со списками
@@ -51,7 +51,7 @@
 	\pagenumbering{arabic} % Устанавливает арабскую нумерацию
 	\setcounter{page}{2}   % Устанавливает номер страницы на 1 для следующей страницы	
 	\tableofcontents % Вставка оглавления
-	\newpage % Переход на новую страницу после оглавления
+	%\newpage % Переход на новую страницу после оглавления
 	
 	\section{Введение}\label{about}
 	Устройство предназначено для работы совместно с системными и портативными камерами в аппаратно-студийных комплексах.
@@ -75,11 +75,11 @@
 		\item Настройка чувствительности датчика освещенности
 		\item Энергонезависимая память для хранения настроек
 	\end{itemize}
-	\vspace{1cm} % Отступ перед изображением
-	\begin{figure}[h]
+	%\vspace{1cm} % Отступ перед изображением
+	\begin{figure}[H]
 		\centering
-		\includegraphics[width=8cm]{imgs/iso_left_1.png}
-		\includegraphics[width=8cm]{imgs/iso_right_1.png}
+		\includegraphics[height=4cm]{imgs/iso_left_1.png}
+		\includegraphics[height=4cm]{imgs/iso_right_1.png}
 	\end{figure}
 
 	\section{Комплектация}
@@ -93,26 +93,35 @@
 	
 	\section{Спецификация}
 	\begin{center}
-		\begin{tabular}{|p{0.1\textwidth}|p{0.4\textwidth}|p{0.5\textwidth}|} \hline
-			№ & Наименование & Значение \\ \hline
-			1 & Количество семисегментных индикаторов, шт & 1 (TallyPlus), 2 (TallyPlus Dual Digit) \\ \hline
-			2 & Диапазон индикации номера камеры & 0-9 (TallyPlus), 00-99 (TallyPlus Dual Digit) \\ \hline
-			3 & Цвет свечения & зеленый (обычное состояние), красный (активировано сигналом управления) \\ \hline
+		\begin{tabular}{|p{0.02\textwidth}|p{0.3\textwidth}|p{0.65\textwidth}|} \hline
+			\bfseries № & \bfseries Наименование & \bfseries Значение \\ \hline
+			1 & Количество семисегментных индикаторов, шт & 1 (TallyPlus),
+													      \newline 2 (TallyPlus Dual Digit) \\ \hline
+			2 & Диапазон индикации & 0-9 (TallyPlus),
+			                                       \newline 00-99 (TallyPlus Dual Digit) \\ \hline
+			3 & Цвет свечения & зеленый (обычное состояние),
+							    \newline красный (активировано сигналом управления) \\ \hline
 			4 & Количество уровней яркости, шт & 6 \\ \hline
-			5 & Сигнал управления & GPI или LDR (фоторезистор) \\ \hline
+			5 & Сигнал управления & LDR (фоторезистор) или GPI (+3 - +6 В, потенциометр должен быть в крайнем левом положении) \\ \hline
 			6 & Крепление & сверху и снизу резъба 1/4″-20 UNC (подходят стандартные аксессуары для фототехники) \\ \hline
 			7 & Электропитание, В & 9 – 18V \\ \hline
 			8 & Потребляемая мощность, Вт & 0.5 \\ \hline
 			9 & Способ подачи питания & от камеры или от внешнего блока питания \\ \hline
-			10 & Размер (ШхВхГ), мм & 69x92x45 (TallyPlus), 120x92x45 (TallyPlus Dual Digit) \\ \hline
-			11 & Вес, гр & 170 (TallyPlus), 250 (TallyPlus Dual Digit) \\ \hline
+			10 & Размер (ШхВхГ), мм & 69x92x45 (TallyPlus),
+			                          \newline 120x92x45 (TallyPlus Dual Digit) \\ \hline
+			11 & Размер упаковки (ШхВхГ), мм & 116x103x102 \\ \hline
+			12 & Вес, гр & 170 (TallyPlus),
+			               \newline 250 (TallyPlus Dual Digit) \\ \hline
+			13 & Вес с упаковкой, гр & 500 (TallyPlus),
+			                           \newline 580 (TallyPlus Dual Digit) \\ \hline
+			
 		\end{tabular}
 	\end{center}	
 	
 	\section{Варианты подключения}
 	\begin{center}
-		\begin{tabular}{|p{0.1\textwidth}|p{0.4\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|} \hline
-			№ & Варианты подключения & Разъем GX12 & Разъем miniXLR \\ \hline
+		\begin{tabular}{|p{0.02\textwidth}|p{0.4\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|} \hline
+			\bfseries № & \bfseries Варианты подключения & \bfseries Разъем GX12 & \bfseries Разъем miniXLR \\ \hline
 			1 & Питание и управление от камеры & Питание и GPI & не используется \\ \hline 
 			2 & Питание от камеры, управление от датчика LDR (фото резистор) & Питание & LDR \\ \hline
 			3 & Питание от внешнего блока питания, управление от камеры или внешнего & Питание & GPI \\ \hline
@@ -123,16 +132,15 @@
 		\begin{enumerate}
 			\item Установить и зафиксировать индикатор на камере или телесуфлере. Для крепления использовать фото аксессуары с резьбовым креплением 1/4” дюйма.
 			\item Произвести подключение кабелей в зависимости от выбранного варианта подключения
-			\item С помощью манипуляторов размещенные на правой боковой стороне индикатора настроить номер и яркость свечения индикатора. Манипуляторы - 3-x позиционные с фиксацией в среднем положении.
-			\item При режиме работы с датчиком LDR (фоторезистор), с помощью регулятора чувствительности, размещенного на боковой
-			стороне настроить порог переключения цвета индикации.
+			\item С помощью манипуляторов размещенных на правой стороне индикатора настроить номер и яркость свечения индикатора. Манипуляторы - 3-x позиционные с фиксацией в среднем положении.
+			\item При режиме работы с датчиком LDR (фоторезистор), с помощью регулятора чувствительности, размещенного на боковой стороне настроить порог переключения цвета индикации. При работе от сигнала GPI установить регулятор чувствительности в крайнее минимальное положение (повернуть против часовой стрелки до щелчка)
 			\item Проверить корректность работы индикатора переключая камеру в режимы On-Air / Off-Air.
 		\end{enumerate}
 	\section{Подключение кабелей}
 		\subsection{GX12}
 			\begin{center}
 				\begin{tabular}{|c|c|} \hline
-					Контакт & Сигнал \\ \hline
+					\bfseries Контакт & \bfseries Сигнал \\ \hline
 					1 & GND \\ \hline
 					2 & GPI \\ \hline
 					3 & GND \\ \hline
@@ -142,11 +150,11 @@
 		\subsection{miniXLR}
 			\begin{center}
 				\begin{tabular}{|c|c|} \hline
-					Контакт & Сигнал \\ \hline
+					\bfseries Контакт & \bfseries Сигнал \\ \hline
 					1 & LDR  \\ \hline
-					2 & GND \\ \hline
+					2 & не используется \\ \hline
 					3 & GPI \\ \hline
-					4 & не используется  \\ \hline
+					4 & GND  \\ \hline
 				\end{tabular}		
 			\end{center}
 	
