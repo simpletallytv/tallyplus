@@ -1,11 +1,10 @@
-\documentclass[12pt]{article}
+\documentclass[10pt]{article}
 %\title{LTC Reader Owner's Manual}\label{ltc-reader-owners-manual}
 \title{\textbf{TallyPlus руководство пользователя}}
 \date{} % Устанавливаем пустую дату
 \author{}
 
-
-\usepackage[a4paper, left=1.5cm, right=1.5cm, top=1cm, bottom=1.5cm]{geometry}
+\usepackage[a5paper, left=1cm, right=1cm, top=1cm, bottom=1.5cm]{geometry}
 %\usepackage{hyperref} % Загружаем пакет для гиперссылок
 \usepackage{graphicx}
 \usepackage{enumitem} % Подключаем пакет для работы со списками
@@ -19,18 +18,23 @@
 \usepackage{fontspec}
 \usepackage{colortbl}
 \usepackage{array} % выравнивание в таблице по вертикали
+\usepackage{tocloft}
 
 \usepackage[hidelinks]{hyperref} % Убрать цветные рамки вокруг ссылок
 
 % Устанавливаем шрифт Open Sans
 \setmainfont{Open Sans}
 
-
 % Переопределяем команды для заголовка
 %\renewcommand{\title}[1]{\begin{center}\textbf{\huge #1}\end{center}}
 %\renewcommand{\author}[1]{\begin{center}\textbf{#1}\end{center}}
 %\renewcommand{\date}[1]{\begin{center}\textbf{#1}\end{center}}
 \renewcommand{\contentsname}{Оглавление}
+
+% Точки для section (уровень 1)
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+% Точки для subsection (уровень 2) - обычно уже есть
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
 
 \begin{document}
 	
@@ -41,7 +45,7 @@
 		\vspace{1cm} % Отступ перед изображением
 		\begin{figure}[h]
 			\centering
-			\includegraphics[width=18cm, keepaspectratio]{imgs/title.png}
+			\includegraphics[width=12cm, keepaspectratio]{imgs/title.png}
 		\end{figure}
 		\vfill % Отодвигает текст вниз страницы
 		% Текст внизу страницы
@@ -56,7 +60,9 @@
 	\newpage % Переход на новую страницу после оглавления
 	
 	\section{Введение}\label{about}
-	Устройство предназначено для работы совместно с системными и портативными камерами в аппаратно-студийных комплексах.
+	\sloppy
+	Устройство предназначено для работы совместно с системными и 
+	портативными камерами в аппаратно-студийных комплексах.
 	\noindent Назначение: 
 	\begin{itemize}
 		\item Идентификация номера камеры
@@ -83,7 +89,7 @@
 		\includegraphics[height=4cm]{imgs/iso_left_1.png}
 		\includegraphics[height=4cm]{imgs/iso_right_1.png}
 	\end{figure}
-
+    
 	\section{Комплектация}
 	\begin{itemize}
 		\item Индикатор TallyPlus / TallyPlus Twin— 1шт
@@ -95,7 +101,7 @@
 	
 	\section{Спецификация}
 	\begin{center}
-		\begin{tabular}{|m{0.02\textwidth}|m{0.3\textwidth}|m{0.65\textwidth}|} \hline
+		\begin{tabular}{|m{0.02\textwidth}|m{0.3\textwidth}|m{0.6\textwidth}|} \hline
 			\bfseries № & \bfseries Наименование & \bfseries Значение \\ \hline
 			1 & Количество семисегментных индикаторов, шт & 1 (TallyPlus),
 													      \newline 2 (TallyPlus Twin) \\ \hline
@@ -123,7 +129,7 @@
 	
 	\section{Варианты подключения}
 	\begin{center}
-		\begin{tabular}{|m{0.02\textwidth}|m{0.4\textwidth}|m{0.25\textwidth}|m{0.25\textwidth}|} \hline
+		\begin{tabular}{|m{0.02\textwidth}|m{0.4\textwidth}|m{0.22\textwidth}|m{0.23\textwidth}|} \hline
 			\bfseries № & \bfseries Варианты подключения & \bfseries Разъем GX12 & \bfseries Разъем miniXLR \\ \hline
 			1 & Питание и управление от камеры & Питание и GPI & не используется \\ \hline 
 			2 & Питание от камеры, управление от датчика LDR (фото резистор) & Питание & LDR \\ \hline
@@ -161,10 +167,10 @@
 					4 & GND  \\ \hline
 				\end{tabular}		
 			\end{center}
-	
+
 	\section{Информация для заказа}
 		\begin{center}
-			\begin{tabular}{|m{0.05\textwidth}|m{0.25\textwidth}|m{0.65\textwidth}|} 
+			\begin{tabular}{|m{0.05\textwidth}|m{0.25\textwidth}|m{0.6\textwidth}|} 
 				\hline
 				\bfseries № & \bfseries Артикул & \bfseries Описание \\ \hline
 				1 & TallyPlus & Индикатор односегментный \\ \hline

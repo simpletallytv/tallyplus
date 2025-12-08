@@ -1,9 +1,9 @@
-\documentclass[12pt]{article}
+\documentclass[10pt]{article}
 \title{\textbf{TallyPlus User Manual}}
 \date{} % Set empty date
 \author{}
 
-\usepackage[a4paper, left=1.5cm, right=1.5cm, top=1cm, bottom=1.5cm]{geometry}
+\usepackage[a5paper, left=1cm, right=1cm, top=1cm, bottom=1.5cm]{geometry}
 \usepackage{graphicx}
 \usepackage{enumitem} % Package for list management
 \usepackage{longtable} % Package for long tables
@@ -16,11 +16,17 @@
 \usepackage{fontspec}
 \usepackage{colortbl}
 \usepackage{array} % Vertical alignment in tables
+\usepackage{tocloft}
 
 \usepackage[hidelinks]{hyperref} % Remove colored borders around links
 
 % Set font to Open Sans
 \setmainfont{Open Sans}
+
+% Точки для section (уровень 1)
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+% Точки для subsection (уровень 2) - обычно уже есть
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
 
 \begin{document}
 	
@@ -31,7 +37,7 @@
 		\vspace{1cm} % Space before image
 		\begin{figure}[h]
 			\centering
-			\includegraphics[width=18cm, keepaspectratio]{imgs/title.png}
+			\includegraphics[width=12cm, keepaspectratio]{imgs/title.png}
 		\end{figure}
 		\vfill % Pushes text down the page
 		% Text at the bottom of the page
@@ -84,7 +90,7 @@
 	
 	\section{Specifications}
 	\begin{center}
-		\begin{tabular}{|m{0.02\textwidth}|m{0.3\textwidth}|m{0.65\textwidth}|} \hline
+		\begin{tabular}{|m{0.02\textwidth}|m{0.3\textwidth}|m{0.6\textwidth}|} \hline
 			\bfseries No & \bfseries Item Name & \bfseries Value \\ \hline
 			1 & Number of seven-segment indicators, pcs & 1 (TallyPlus),
 			\newline 2 (TallyPlus Twin) \\ \hline
@@ -112,7 +118,7 @@
 	
 	\section{Connection Options}
 	\begin{center}
-		\begin{tabular}{|m{0.02\textwidth}|m{0.4\textwidth}|m{0.25\textwidth}|m{0.25\textwidth}|} \hline
+		\begin{tabular}{|m{0.02\textwidth}|m{0.4\textwidth}|m{0.2\textwidth}|m{0.2\textwidth}|} \hline
 			\bfseries No & \bfseries Connection Options & \bfseries GX12 Connector & \bfseries miniXLR Connector \\ \hline
 			1 & Power and control from the camera & Power and GPI & not used \\ \hline 
 			2 & Power from the camera, control from LDR sensor (photoresistor) & Power & LDR \\ \hline
@@ -153,7 +159,7 @@
 	
 	\section{Ordering Information}
 	\begin{center}
-		\begin{tabular}{|m{0.05\textwidth}|m{0.25\textwidth}|m{0.65\textwidth}|} 
+		\begin{tabular}{|m{0.05\textwidth}|m{0.25\textwidth}|m{0.6\textwidth}|} 
 			\hline
 			\bfseries No & \bfseries Article & \bfseries Description \\ \hline
 			1 & TallyPlus & Single-segment indicator \\ \hline
